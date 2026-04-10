@@ -2,8 +2,13 @@ using UnityEngine;
 
 public class UpdateMovement : MonoBehaviour
 {
-    private float movementSpeed = 10f;
+    [SerializeField] float movementSpeed = 14f;
     public float horizontalBoundary = 22;
+
+    public GameObject hayBalePrefab; //Reference to the Hay Bale prefab.
+    public Transform haySpawnpoint; //The point from which the hay will to be shot.
+    public float shootInterval; //The smallest amount of time between shots
+    private float shootTimer; //A timer that to keep track whether the machine can shoot or not
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -15,6 +20,7 @@ public class UpdateMovement : MonoBehaviour
     void Update()
     {
         UpdateMovementMethod();
+        UpdateShooting();
     }
 
     private void UpdateMovementMethod()
@@ -28,5 +34,20 @@ public class UpdateMovement : MonoBehaviour
         {
             transform.Translate(transform.right * movementSpeed * Time.deltaTime);
         }
+    }
+
+    private void UpdateShooting()
+    {
+        shootTimer -= Time.deltaTime;
+        if (shootTimer <= 0 && Input.GetKey(KeyCode.Space))
+        {
+            shootTimer = shootInterval;
+            ShootHay();
+        }
+    }
+
+    private void ShootHay()
+    {
+        Instantiate(hayBalePrefab, haySpawnpoint.position, Quaternion.identity);
     }
 }
