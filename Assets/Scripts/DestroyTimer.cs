@@ -1,19 +1,18 @@
 using UnityEngine;
 
-public class Move : MonoBehaviour
+public class DestroyTimer : MonoBehaviour
 {
-    [SerializeField] private Vector3 movementSpeed = new Vector3(0, 20f, 0);
-    public Space space = Space.World;
-    
+    public float timeToDestroy;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        Destroy(gameObject, timeToDestroy);
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(movementSpeed * Time.deltaTime, space);
+        
     }
 }
