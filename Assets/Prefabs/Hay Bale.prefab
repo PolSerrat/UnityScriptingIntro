@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hay Bale
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: af7e099ccf40c8046b7d720e9d8df558, type: 3}
+      propertyPath: m_TagString
+      value: Hay
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: af7e099ccf40c8046b7d720e9d8df558, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.63284
@@ -72,6 +76,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 5968398416117056372}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: af7e099ccf40c8046b7d720e9d8df558,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1508369732436512641}
   m_SourcePrefab: {fileID: 100100000, guid: af7e099ccf40c8046b7d720e9d8df558, type: 3}
 --- !u!1 &7243996241617652315 stripped
 GameObject:
@@ -153,3 +161,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   space: 0
+--- !u!114 &1508369732436512641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7243996241617652315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2b5b2a00419f7148b59390ef5c14ccd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagFilter: DestroyHay
