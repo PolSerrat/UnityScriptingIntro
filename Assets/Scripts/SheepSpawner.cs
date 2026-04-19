@@ -8,6 +8,10 @@ public class SheepSpawner : MonoBehaviour
     public GameObject sheepPrefab; // 2
     public List<Transform> sheepSpawnPositions = new List<Transform>(); // 3
     public float timeBetweenSpawns;
+
+    public float minimumSpawnTime = 0.5f;
+    public float spawnTimeDecrement = 0.1f;
+
     private List<GameObject> sheepList = new List<GameObject>(); // 5
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -38,6 +42,11 @@ public class SheepSpawner : MonoBehaviour
         {
             SpawnSheep(); // 3
             yield return new WaitForSeconds(timeBetweenSpawns); // 4
+
+            if (timeBetweenSpawns > minimumSpawnTime) // 5
+                {
+                    timeBetweenSpawns -= spawnTimeDecrement; // 6
+            }
         }
     }
 

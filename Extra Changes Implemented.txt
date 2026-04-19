@@ -1,0 +1,3 @@
+- Added increment on sheep spawning depending on the time passed.
+- Randomized the color of each sheep.
+- Added a High Score saving system, so that there is a reason to replay the game.

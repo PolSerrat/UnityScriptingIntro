@@ -21,6 +21,9 @@ public class Sheep : MonoBehaviour
     {
         myCollider = GetComponent<Collider>();
         myRigidbody = GetComponent<Rigidbody>();
+        
+        //GetComponent<MeshRenderer>().material.color = Random.ColorHSV();
+        GetComponentInChildren<Renderer>().material.color = Random.ColorHSV();
     }
 
     // Update is called once per frame
